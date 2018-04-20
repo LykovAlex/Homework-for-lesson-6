@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link href="style.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container">
+      <div class="goods">
+        <div>
+          <img src="img/1.png" alt="" id="1">
+          <p class="price">Цена: 19999 рублей</p>
+          <button id="19999">Купить</button>
+        </div>
+        <div>
+           <img src="img/2.png" alt="" id="2">
+           <p class="price">Цена: 24999 рублей</p>
+           <button id="24999">Купить</button>
+        </div>
+        <div>
+           <img src="img/3.png" alt="" id="3">
+           <p class="price">Цена: 29999 рублей</p>
+           <button id="29999">Купить</button>
+        </div>
+      </div>
+
+      <div class="basket">
+        <img src="img/basket.jpeg" alt="">
+        <p>У вас в корзине: <span id="countGoods">0<span> товаров</p>
+        <p>На сумму: <span id="price">0</span>p</p>
+      </div>
+    </div>
+
+    <script>
+    var phones = document.getElementsByTagName('button');
+    for(var i = 0; i<phones.length; i++){
+      phones[i].addEventListener('click', buy);
+    }
+
+    function buy(activePhone){
+    console.log(activePhone);
+    var count = document.getElementById('countGoods');
+    var totalPrice = document.getElementById('price');
+    var priceActivePhone = activePhone.target.id;
+    priceActivePhone = parseInt(priceActivePhone);
+
+    console.log(typeof(priceActivePhone));
+    console.log(priceActivePhone);
+
+    totalPrice.innerHTML = priceActivePhone;
+
+    console.log(typeof(totalPrice.innerHTML));
+    console.log(totalPrice.innerHTML);
+    var countGood;
+    if(!countGood){
+      countGood = 1;
+    } else{
+      countGood = countGood +1 ;
+    }
+    count.innerText = countGood  +" товар";
+
+    // if(totalPrice.innerText){
+    //   totalPrice.innerText = totalPrice.innerText + totalPrice.innerText;
+    // }
+    // if(!count.innerText){
+    //   count.innerText = 1
+    // }
+    // if(count.innerText = 1 || count.innerText > 1 ){
+    //   count.innerText++;
+    // }
+   }
+
+
+
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+.container{
+  width:100%;
+}
+.goods{
+  margin:0 auto;
+  max-width:900px;
+  display:flex;
+  flex-wrap: wrap;
+  text-align: center;
+}
+.price{
+  font-size: 120%;
+}
+button{
+  font-size: 130%;
+  background-color: red;
+  border-radius: 5px;
+  color:white;
+  border:none;
+  padding:5px 50px;
+}
+.basket{
+  text-align: center;
+  margin:20px;
+}

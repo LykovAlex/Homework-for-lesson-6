@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>События</title>
+    <link href="style.css" rel="stylesheet">
+  </head>
+  <body>
+
+<div class="container">
+
+  <div id="bigPicture">
+
+  </div>
+
+  <div class="smallPicture">
+    <img id="one" src="img/1-mini.jpg">
+    <img id="twoo" src="img/2-mini.jpg">
+    <img id="three" src="img/3-mini.jpg">
+  </div>
+</div>
+    <script>
+var small = document.getElementsByTagName('img');
+for(var i=0; i < small.length; i++){
+  // small[i].onclick = addBigPicture;
+  small[i].addEventListener('click', addBigPicture);
+}
+
+function addBigPicture(activePicture){
+  var bigPicture = document.getElementById('bigPicture');
+  bigPicture.innerHTML = "";
+  // console.log(activePicture);
+  // console.log(activePicture.target.id);
+  var idThisPicture = activePicture.target.id;
+  var src = "img/" + idThisPicture + "-big.jpg";
+  var addBigPicture = document.createElement('img');
+  addBigPicture.src = src;
+  addBigPicture.onerror = function(){ // oneerror - ошибка загрузки(не выполнения а именно загрузки) скрипта
+  alert("Произошла ошибка при добавлении файла, возможно искомый файл отсутствует или не совпадает по имени");
+  }
+  bigPicture.appendChild(addBigPicture);
+}
+
+    </script>
+  </body>
+</html>
